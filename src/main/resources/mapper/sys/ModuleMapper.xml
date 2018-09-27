@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="motorcli.example.mapper.sys.ModuleMapper">
+    
+    <resultMap id="ModuleMap" type="Module">
+        <result property="id" column="id" />
+        <result property="moduleUrl" column="module_url" />
+        <result property="moduleIcon" column="module_icon" />
+
+        <!-- 对象关联属相映射  -->
+        <association property="resource" javaType="Resource">
+            <result property="id" column="r_id" />
+            <result property="name" column="r_name" />
+            <result property="dataState" column="r_data_state" />
+            <result property="description" column="r_description" />
+            <result property="orderNum" column="r_order_num" />
+            <result property="resourceType" column="r_resource_type" />
+            <result property="parentId" column="r_parent_id" />
+        </association>
+    </resultMap>
+
+    <select id="queryById" resultMap="ModuleMap" parameterType="string">
+        select m.*,
+        r.id as r_id, r.name as r_name,
+        r.data_state as r_data_state, r.description as r_description,
+        r.order_num as r_order_num, r.resource_type as r_resource_type,
+        r.parent_id as r_parent_id
+        from t_sys_resource r join t_sys_module m on r.id = m.id
+        where m.id = #{id}
+    </select>
+
+    <select id="queryByModuleUrl" resultMap="ModuleMap" parameterType="string">
+        select m.*,
+        r.id as r_id, r.name as r_name,
+        r.data_state as r_data_state, r.description as r_description,
+        r.order_num as r_order_num, r.resource_type as r_resource_type,
+        r.parent_id as r_parent_id
+        from t_sys_resource r join t_sys_module m on r.id = m.id
+        where m.module_url = #{moduleUrl}
+    </select>
+
+    <select id="queryAll" resultMap="ModuleMap">
+        select m.*,
+        r.id as r_id, r.name as r_name,
+        r.data_state as r_data_state, r.description as r_description,
+        r.order_num as r_order_num, r.resource_type as r_resource_type,
+        r.parent_id as r_parent_id
+        from t_sys_resource r join t_sys_module m on r.id = m.id
+        order by r.order_num
+    </select>
+
+    <select id="queryByParentId" resultMap="ModuleMap" parameterType="string">
+        select m.*,
+        r.id as r_id, r.name as r_name,
+        r.data_state as r_data_state, r.description as r_description,
+        r.order_num as r_order_num, r.resource_type as r_resource_type,
+        r.parent_id as r_parent_id
+        from t_sys_resource r join t_sys_module m on r.id = m.id
+        where r.parent_id = #{parentId}
+        order by r.order_num
+    </select>
+
+    <select id="queryByStateAndInIds" resultMap="ModuleMap">
+        select m.*,
+        r.id as r_id, r.name as r_name,
+        r.data_state as r_data_state, r.description as r_description,
+        r.order_num as r_order_num, r.resource_type as r_resource_type,
+        r.parent_id as r_parent_id
+        from t_sys_resource r join t_sys_module m on r.id = m.id
+        where r.data_state = #{state}
+        <if test="ids != null">
+            and r.id in
+            <foreach collection="ids" index="index" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        order by r.order_num
+    </select>
+</mapper>

@@ -1,0 +1,37 @@
+<form class="motor-form">
+    <input type="hidden" name="id" value="" />
+    <table class="editTable">
+        <tr>
+            <th>区域名称：</th>
+            <td>
+                <input class="easyui-textbox" name="name" data-options="required:true,validType:['maxLength[20]']"/>
+            </td>
+            <th>短名称：</th>
+            <td>
+                <input class="easyui-textbox" name="shortName" data-options="required:true,validType:['maxLength[20]']"/>
+            </td>
+        </tr>
+        <tr>
+            <th>排序号：</th>
+            <td>
+                <input class="easyui-textbox" name="sort" data-options="required:true,validType:['number[7]']" />
+            </td>
+            <th>行政区划编码：</th>
+            <td>
+                <input class="easyui-numberbox" name="adcode"/>
+            </td>
+        </tr>
+        <tr>
+            <th>级别：</th>
+            <td colspan="3">
+                <select class="easyui-combobox" name="level" data-options="required:true,editable : false">
+                    <option selected="selected" value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</form>

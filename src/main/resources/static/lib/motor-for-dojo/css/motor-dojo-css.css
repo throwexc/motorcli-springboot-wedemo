@@ -1,0 +1,123 @@
+.dijitContentPane {
+    overflow : hidden !important;
+}
+
+
+/*********** widget ************/
+
+.maptype-wrapper {
+
+}
+
+.maptype-wrapper .maptype {
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    height: 80px;
+    transition-duration: 0.4s;
+    transition-property: width, background-color;
+    width: 110px;
+}
+
+.maptype-wrapper .maptype .mapTypeCard {
+    background: rgba(0, 0, 0, 0) url("../images/maptool/shadow.png") no-repeat scroll 0 0 / 86px 240px;
+    border: 1px solid rgba(153, 153, 153, 0.42);
+    border-radius: 2px;
+    box-sizing: border-box;
+    height: 60px;
+    position: absolute;
+    top: 10px;
+    transition-duration: 0.4s;
+    transition-property: right, background-image;
+    width: 86px;
+}
+
+.maptype-wrapper .maptype .vector {
+    background-position: 0 0;
+}
+
+.maptype-wrapper .maptype .vector.card-show {
+    background-image: url("../images/maptool/maptype.png");
+    background-position: 0 -0px;
+    border-left: 1px solid rgba(153, 153, 153, 0.6);
+}
+
+.maptype-wrapper .maptype .img.card-show {
+    background-image: url("../images/maptool/maptype.png");
+    background-position: 0 -61px;
+    border-left: 1px solid rgba(153, 153, 153, 0.6);
+}
+
+.maptype-wrapper .maptype .mapTypeCard span {
+    border-top-left-radius: 2px;
+    bottom: 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    height: 17px;
+    line-height: 12px;
+    padding: 3px 3px 2px 4px;
+    position: absolute;
+    right: 0;
+}
+
+.maptype-wrapper .maptype .mapTypeCard.active span, .maptype-wrapper .maptype .mapTypeCard:hover span {
+    background-color: #3385ff;
+}
+
+
+/***************** map tool *******************/
+.map-navbar {
+    position: absolute;
+    left: 15px;
+    z-index: 100;
+    margin-top: 5px;
+}
+
+.map-navbar img {
+    cursor: pointer;
+}
+
+.map-panbar {
+    position: absolute;
+    left: 33px;
+    z-index: 100;
+    margin-top: 45px;
+}
+
+.map-panbar img {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.map-panbar #panNorth {
+    margin-left: 24px;
+}
+
+.map-panbar #panWest {
+    margin-top: 24px;
+}
+
+.map-panbar #panCenter {
+    margin-top: 24px;
+    margin-left: 24px;
+    z-index: 99;
+}
+
+.map-panbar #panEast {
+    margin-top: 24px;
+    margin-left: 48px;
+}
+
+.map-panbar #panSouth {
+    margin-top: 48px;
+    margin-left: 24px;
+}
+
+.map-tools {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 2000;
+}

@@ -1,0 +1,23 @@
+.tip-darkgray {
+    background-image:url(tip-white.png); /* bgImageFrameSize >= 11 should work fine */
+    /**
+     * - If you set a background-image, border/padding/background-color will be ingnored.
+     *   You can set any padding to .tip-inner instead if you need.
+     * - If you want a tiled background-image and border/padding for the tip,
+     *   set the background-image to .tip-inner instead.
+     */
+}
+
+/* Configure an arrow image - the script will automatically position it on the correct side of the tip */
+.tip-darkgray .tip-arrow-top {
+    background:url(tip-white_arrows.png) no-repeat;
+}
+.tip-darkgray .tip-arrow-right {
+    background:url(tip-white_arrows.png) no-repeat -22px 0;
+}
+.tip-darkgray .tip-arrow-bottom {
+    background:url(tip-white_arrows.png) no-repeat -44px 0;
+}
+.tip-darkgray .tip-arrow-left {
+    background:url(tip-white_arrows.png) no-repeat -66px 0;
+}

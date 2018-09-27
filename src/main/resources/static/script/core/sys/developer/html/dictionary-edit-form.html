@@ -1,0 +1,31 @@
+<form class="motor-form">
+    <input type="hidden" name="id" value="" />
+    <table class="editTable">
+        <tr>
+            <th>键：</th>
+            <td>
+                <input class="easyui-textbox" name="key" data-options="required:true,validType:['maxLength[200]']" style="width: 300px;" />
+            </td>
+
+        </tr>
+        <tr>
+            <th>名称：</th>
+            <td>
+                <input class="easyui-textbox" name="label" data-options="required:true,validType:['maxLength[200]']" style="width: 300px;" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                值：</th>
+            <td>
+                <input class="easyui-textbox" name="value" data-options="required:true,validType:['maxLength[255]']" style="width: 300px;" />
+            </td>
+        </tr>
+        <tr>
+            <th>排序号：</th>
+            <td>
+                <input class="easyui-numberbox" name="orderNum" data-options="required:true, validType:['number[7]']" style="width: 300px;" />
+            </td>
+        </tr>
+    </table>
+</form>

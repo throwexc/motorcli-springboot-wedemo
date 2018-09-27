@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="motorcli.example.mapper.sys.UserMapper">
+
+    <resultMap id="UserMap" type="User">
+        <id property="id" column="id" />
+        <result property="username" column="username" />
+        <result property="password" column="password" />
+        <result property="dataState" column="data_state" />
+        <result property="sex" column="sex" />
+        <result property="phone" column="phone" />
+        <result property="email" column="email" />
+        <result property="birthday" column="birthday" />
+        <result property="createTime" column="create_time" />
+        <result property="updateTime" column="update_time" />
+        <result property="activeTime" column="active_time" />
+        <result property="unitId" column="unit_id" />
+        <result property="headImgUrl" column="head_img_url" />
+
+        <association property="actor" javaType="Actor">
+            <id property="id" column="a_id" />
+            <result property="name" column="a_name" />
+            <result property="actorType" column="a_actor_type" />
+            <result property="aclType" column="a_acl_type" />
+            <result property="remark" column="a_remark" />
+        </association>
+
+        <association property="unit" javaType="Unit" select="motorcli.example.mapper.sys.UnitMapper.queryById" column="unit_id">
+        </association>
+
+        <association property="roles" javaType="List" select="motorcli.example.mapper.sys.UserAndRoleRelationMapper.queryRoleByUserId" column="id"></association>
+    </resultMap>
+
+    <select id="queryById" resultMap="UserMap" parameterType="string">
+        select u.*,
+        a.id as a_id, a.name as a_name,
+        a.actor_type as a_actor_type, a.acl_type as a_acl_type,
+        a.remark as a_remark
+        from t_sys_actor a join t_sys_user u on a.id = u.id
+        where a.id = #{id}
+    </select>
+
+    <select id="queryByUsername" resultMap="UserMap" parameterType="string">
+        select u.*,
+        a.id as a_id, a.name as a_name,
+        a.actor_type as a_actor_type, a.acl_type as a_acl_type,
+        a.remark as a_remark
+        from t_sys_actor a join t_sys_user u on a.id = u.id
+        where u.username = #{username}
+    </select>
+
+    <select id="search" parameterType="UserSearchParams" resultMap="UserMap">
+        select u.*,
+        a.id as a_id, a.name as a_name,
+        a.actor_type as a_actor_type, a.acl_type as a_acl_type,
+        a.remark as a_remark
+        from t_sys_actor a join t_sys_user u on a.id = u.id
+        <where>
+            <if test="operable != null and operable == true">
+                a.actor_type <![CDATA[ > 0 ]]> and u.data_state <![CDATA[ > 0 ]]>
+            </if>
+            <if test="name != null and name != ''">
+                and a.name like CONCAT(CONCAT('%', #{name}),'%')
+            </if>
+            <if test="phone != null and phone != ''">
+                and u.phone like CONCAT(CONCAT('%', #{phone}),'%')
+            </if>
+            <if test="keywords != null and keywords != ''">
+                and ( a.name like CONCAT(CONCAT('%', #{keywords}),'%') or u.phone like CONCAT(CONCAT('%', #{keywords}),'%'))
+            </if>
+            <if test="unitId != null and unitId != ''">
+                and u.unit_id = #{unitId}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryByState" resultMap="UserMap" parameterType="int">
+        select u.*,
+        a.id as a_id, a.name as a_name,
+        a.actor_type as a_actor_type, a.acl_type as a_acl_type,
+        a.remark as a_remark
+        from t_sys_actor a join t_sys_user u on a.id = u.id
+        where u.data_state = #{state}
+    </select>
+</mapper>

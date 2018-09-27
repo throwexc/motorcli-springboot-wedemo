@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="motorcli.example.mapper.sys.RoleMapper">
+
+    <resultMap id="RoleMap" type="Role">
+        <id property="id" column="id" />
+
+        <association property="actor" javaType="Actor">
+            <id property="id" column="a_id" />
+            <result property="name" column="a_name" />
+            <result property="actorType" column="a_actor_type" />
+            <result property="aclType" column="a_acl_type" />
+            <result property="remark" column="a_remark" />
+        </association>
+    </resultMap>
+
+    <select id="queryById" resultMap="RoleMap" parameterType="string">
+        select r.*,
+        a.id as a_id, a.name as a_name,
+        a.actor_type as a_actor_type, a.acl_type as a_acl_type,
+        a.remark as a_remark
+        from t_sys_actor a join t_sys_role r on a.id = r.id
+        where r.id = #{id}
+    </select>
+
+    <select id="queryAll" resultMap="RoleMap">
+        select r.*,
+        a.id as a_id, a.name as a_name,
+        a.actor_type as a_actor_type, a.acl_type as a_acl_type,
+        a.remark as a_remark
+        from t_sys_actor a join t_sys_role r on a.id = r.id
+    </select>
+
+    <select id="search" resultMap="RoleMap" parameterType="RoleSearchParams">
+        select r.*,
+        a.id as a_id, a.name as a_name,
+        a.actor_type as a_actor_type, a.acl_type as a_acl_type,
+        a.remark as a_remark
+        from t_sys_actor a join t_sys_role r on a.id = r.id
+        <where>
+            <if test="name != null and name != ''">
+                a.name like CONCAT(CONCAT('%', #{name}),'%')
+            </if>
+        </where>
+    </select>
+</mapper>

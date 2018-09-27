@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="motorcli.example.mapper.sys.UnitMapper">
+
+    <select id="queryById" resultType="Unit" parameterType="string">
+        select *
+        from t_sys_unit
+        where id = #{id}
+    </select>
+
+    <select id="queryAll" resultType="Unit">
+        select *
+        from t_sys_unit
+        order by order_num
+    </select>
+
+    <select id="queryNotDelete" resultType="Unit">
+        select *
+        from t_sys_unit
+        where data_state <![CDATA[ > 0 ]]>
+        order by order_num
+    </select>
+
+    <select id="queryNotDeleteByParentId" resultType="Unit" parameterType="string">
+        select *
+        from t_sys_unit
+        where data_state <![CDATA[ > 0 ]]> and parent_id = #{parentId}
+        order by order_num
+    </select>
+
+</mapper>

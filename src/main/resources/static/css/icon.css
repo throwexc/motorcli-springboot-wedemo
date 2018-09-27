@@ -1,0 +1,65 @@
+
+/** 取消选中 **/
+.icon-un-check {
+    background-image: url("../images/icon/icon_un_check.png");
+}
+
+/** 删除 **/
+.icon-delete {
+    background-image: url("../images/icon/icon_delete.png");
+}
+
+/** 删除全部 **/
+.icon-delete-all {
+    background-image: url("../images/icon/icon_delete_all.png");
+}
+
+/** 设置 **/
+.icon-setting {
+    background-image: url("../images/icon/icon_setting.png");
+}
+
+/** 关闭 **/
+.icon-close {
+    background-image: url("../images/icon/icon_close.png");
+}
+
+/** 设置密码 **/
+.icon-key {
+    background-image: url("../images/icon/icon_key.png");
+}
+
+/** 找回 **/
+.icon-back-up {
+    background-image: url("../images/icon/icon_back_up.png");
+}
+
+/** 房子 **/
+.icon-house {
+    background-image: url("../images/icon/icon_house.png");
+}
+
+/** 消息 **/
+.icon-message {
+    background: url("../images/icon/icon_message.png") no-repeat center center;
+}
+
+/** 选择文件 **/
+.icon-file-form {
+    background: url("../images/icon/icon_file_form.png") no-repeat center center;
+}
+
+/** 发布 **/
+.icon-publish {
+    background: url("../images/icon/icon_publish.png") no-repeat center center;
+}
+
+/** 取消发布 **/
+.icon-publish-cancel {
+    background: url("../images/icon/icon_cancel_publish.png") no-repeat center center;
+}
+
+.icon-excel {
+    background: url("../images/icon/icon_excel.png") no-repeat center center;
+}
+

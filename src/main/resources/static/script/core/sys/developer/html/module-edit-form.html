@@ -1,0 +1,49 @@
+<form class="motor-form">
+    <input type="hidden" name="id" value="" />
+    <table class="editTable">
+        <tr>
+            <th>模块名称：</th>
+            <td>
+                <input class="easyui-textbox" name="name" data-options="required:true,validType:['maxLength[200]']" />
+            </td>
+            <th>用户接口：</th>
+            <td>
+                <input class="easyui-textbox" name="moduleUrl" data-options="required:true,validType:['maxLength[255]']" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                图标：</th>
+            <td>
+                <input class="easyui-textbox" name="moduleIcon" data-options="validType:['maxLength[255]']" />
+            </td>
+            <th>排序号：</th>
+            <td>
+                <input class="easyui-numberbox" name="orderNum" data-options="required:true, validType:['number[15]']" />
+            </td>
+        </tr>
+        <tr>
+            <th>状态：</th>
+            <td>
+                <input value="1" checked="checked" name="dataState" type="radio" />
+                <label>启用</label>
+                &nbsp;&nbsp;&nbsp;
+                <input value="0" name="status" type="radio" />
+                <label>禁用</label>
+            </td>
+            <th>类型：</th>
+            <td>
+                <select class="easyui-combobox" name="resourceType" data-options="required:true,panelHeight:'auto',editable : false">
+                    <option selected="selected" value="1">内部模块</option>
+                    <option value="2">外部模块</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>备注：</th>
+            <td colspan="3">
+                <textarea class="easyui-textbox" name="description" data-options="validType:['maxLength[800]'], multiline:true" style="width: 100%; height: 100px;"></textarea>
+            </td>
+        </tr>
+    </table>
+</form>

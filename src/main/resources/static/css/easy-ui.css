@@ -1,0 +1,134 @@
+.accordion .accordion-header-selected {
+    background: #f3f3f3 none repeat scroll 0 0;
+}
+
+.accordion .accordion-header-selected .panel-title {
+    color: #000000;
+}
+
+.accordion .accordion-header .panel-title {
+    color: #000000;
+    padding-top: 3px;
+    font-size: 9pt;
+}
+
+.accordion .accordion-header .panel-tool {
+    background: #eaf2ff;
+    border-radius: 3px;
+    opacity: 0.5;
+    display: none;
+}
+
+.accordion .accordion-header {
+    background-image: url("../images/main/leftmenubg.gif");
+    height: 35px;
+    border: none;
+}
+
+.l-btn-icon {
+    cursor: pointer;
+}
+
+.textbox.combo input[readonly="readonly"] {
+    cursor: pointer;
+}
+
+.tabs-header {
+    padding: 0px !important;
+}
+
+.panel-body {
+    overflow: auto;
+    background: #ffffff;
+}
+
+.datagrid-toolbar {
+    padding: 5px;
+}
+
+.window .window-header .panel-with-icon {
+    padding-left: 30px;
+}
+
+.panel-body.accordion-body {
+    background-color: white;
+}
+
+.layout-panel-north {
+    box-shadow: none !important;
+}
+
+.tabs li.tabs-selected a.tabs-inner {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #33bbee 0px, #2288cc 100%) repeat-x scroll 0 0;
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr=#33bbee,endColorstr=#2288cc,GradientType=0);
+    color: #ffffff;
+    border-bottom: 1px solid #2288cc;
+}
+
+.tabs-header-left .tabs li.tabs-selected a.tabs-inner {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #33bbee 0px, #2288cc 100%) repeat-x scroll 0 0;
+    filter : progid:DXImageTransform.Microsoft.gradient(startColorstr=#33bbee,endColorstr=#2288cc,GradientType=0);
+    color: #ffffff;
+    border-bottom: 1px solid #2288cc;
+}
+
+.module-tabs .tabs li.tabs-selected a.tabs-inner {
+    color: #2288CC;
+}
+
+.combobox-item {
+    cursor: pointer !important;
+}
+
+#map .tooltip {
+    display: block !important;
+}
+
+.combo-search-grid-toolbar {
+    text-align: right;
+}
+
+.search-box {
+    display: inline-block;
+}
+
+.slider slider-h {
+    padding: 0px !important;
+}
+
+/*数据表格*/
+.datagrid-header-row {
+    height: 40px;
+}
+
+.datagrid-header-row td .datagrid-cell {
+    font-weight: bold;
+    text-align: center;
+}
+
+.datagrid-cell {
+    font-size: 13px;
+    text-align: center;
+}
+
+.datagrid-row[node-id] td:first-child .datagrid-cell {
+    text-align: left !important;
+}
+
+.datagrid-row {
+    height: 35px;
+}
+
+.datagrid-row-selected {
+    background: #b4d3fa none repeat scroll 0 0 !important;
+    color: #000 !important;
+}
+
+.datagrid-cell span b {
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.datagrid-cell {
+    font-size: 13px;
+}

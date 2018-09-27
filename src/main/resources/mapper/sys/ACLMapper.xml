@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="motorcli.example.mapper.sys.ACLMapper">
+
+    <select id="queryByActorId" resultType="ACL" parameterType="string">
+        select *
+        from t_sys_acl
+        where actor_id = #{actorId}
+    </select>
+
+    <delete id="deleteByResourceId" parameterType="string">
+        delete from t_sys_acl where resource_id = #{resourceId}
+    </delete>
+
+    <delete id="deleteByActorId" parameterType="string">
+        delete from t_sys_acl where actor_id = #{actorId}
+    </delete>
+</mapper>

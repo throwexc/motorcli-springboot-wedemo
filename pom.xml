@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>motorcli</groupId>
+	<artifactId>motorcli-springboot-wedemo</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+
+	<name>motorcli-springboot-wedemo</name>
+	<description>motorcli-springboot 示例工程</description>
+
+	<properties>
+		<motorcli.version>0.1</motorcli.version>
+	</properties>
+
+	<parent>
+		<groupId>motorcli-springboot</groupId>
+		<artifactId>motorcli-springboot</artifactId>
+		<version>0.1</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>motorcli-springboot</groupId>
+			<artifactId>motorcli-springboot-common</artifactId>
+			<version>${motorcli.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>motorcli-springboot</groupId>
+			<artifactId>motorcli-springboot-web</artifactId>
+			<version>${motorcli.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>motorcli-springboot</groupId>
+			<artifactId>motorcli-springboot-datasource</artifactId>
+			<version>${motorcli.version}</version>
+		</dependency>
+
+		<!-- My SQL JDBC connect -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>motorcli-springboot</groupId>
+			<artifactId>motorcli-springboot-mybatis</artifactId>
+			<version>${motorcli.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>motorcli-springboot</groupId>
+			<artifactId>motorcli-springboot-mongodb</artifactId>
+			<version>${motorcli.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>motorcli-springboot</groupId>
+			<artifactId>motorcli-springboot-restfull</artifactId>
+			<version>${motorcli.version}</version>
+		</dependency>
+
+		<!-- webjars -->
+
+		<dependency>
+			<groupId>motorcli</groupId>
+			<artifactId>motorcli-webjars</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>2.2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>font-awesome</artifactId>
+			<version>4.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery-cookie</artifactId>
+			<version>1.4.1-1</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+
+				<dependencies>
+					<!-- spring热部 -->
+					<dependency>
+						<groupId>org.springframework</groupId>
+						<artifactId>springloaded</artifactId>
+						<version>1.2.8.RELEASE</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+        </plugins>
+	</build>
+</project>

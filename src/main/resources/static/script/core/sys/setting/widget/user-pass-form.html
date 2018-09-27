@@ -1,0 +1,22 @@
+<form class="motor-form">
+    <table class="editTable" style="width: 100%">
+        <tr>
+            <th style="width: 85px;">原密码：</th>
+            <td>
+                <input class="easyui-textbox" type="password" name="oldPassword" data-options="required:true,validType:['maxLength[150]']" style="width: 100%" />
+            </td>
+        </tr>
+        <tr>
+            <th style="width: 85px;">新密码：</th>
+            <td>
+                <input id="newPassword" class="easyui-textbox" type="password" name="newPassword" data-options="required:true,validType:['maxLength[150]']" style="width: 100%"  />
+            </td>
+        </tr>
+        <tr>
+            <th style="width: 85px;">确认密码：</th>
+            <td>
+                <input class="easyui-textbox" type="password" name="confirmPassword"  data-options="required:true,validType:['maxLength[150]','equalTo[\'#newPassword\']']" style="width: 100%" />
+            </td>
+        </tr>
+    </table>
+</form>

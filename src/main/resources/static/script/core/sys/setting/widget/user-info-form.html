@@ -1,0 +1,31 @@
+<form class="motor-form">
+    <input type="hidden" name="id" value="" />
+    <table class="editTable">
+        <tr>
+            <th>用户姓名：</th>
+            <td>
+                <input class="easyui-textbox" name="name" data-options="required:true,validType:['maxLength[200]']" />
+            </td>
+            <th>手机号：</th>
+            <td>
+                <input class="easyui-textbox" name="phone" data-options="validType:['mobile']" />
+            </td>
+        </tr>
+        <tr>
+            <th>电子邮件：</th>
+            <td>
+                <input class="easyui-textbox" name="email" data-options="validType:['mail']" />
+            </td>
+            <th>
+                性别：
+            </th>
+            <td>
+                <select class="easyui-combobox" name="sex" data-options="required:true,panelHeight:'auto',editable : false" style="width: 200px;">
+                    <option selected="selected" value="男">男</option>
+                    <option value="女">女</option>
+                </select>
+            </td>
+
+        </tr>
+    </table>
+</form>
