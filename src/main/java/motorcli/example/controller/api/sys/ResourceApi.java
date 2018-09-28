@@ -2,7 +2,7 @@ package motorcli.example.controller.api.sys;
 
 import motorcli.example.dto.sys.CheckedResourceModel;
 import motorcli.example.service.sys.ResourceService;
-import com.motorcli.springboot.restfull.result.ResultItems;
+import com.motorcli.springboot.restful.result.ResultItems;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

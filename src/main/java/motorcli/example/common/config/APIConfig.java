@@ -23,7 +23,7 @@ public class APIConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public Docket apiDoc() {
+    public Docket sysApiDoc() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("API 接口")
                 .genericModelSubstitutes(DeferredResult.class)
@@ -31,7 +31,7 @@ public class APIConfig implements WebMvcConfigurer {
                 .forCodeGeneration(true)
                 .pathMapping("/")
                 .select()
-                .paths(regex("/.*"))//过滤的接口
+                .paths(regex("/api/sys/.*"))//过滤的接口
                 .build()
                 .apiInfo(apiInfo());
     }

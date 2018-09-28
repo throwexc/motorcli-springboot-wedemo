@@ -5,7 +5,7 @@ import motorcli.example.entity.sys.ACL;
 import motorcli.example.entity.sys.Resource;
 import motorcli.example.mapper.sys.ACLMapper;
 import motorcli.example.mapper.sys.ResourceMapper;
-import com.motorcli.springboot.restfull.dto.converter.TreeDataChanger;
+import com.motorcli.springboot.restful.dto.converter.TreeDataChanger;
 import motorcli.example.dto.sys.CheckedResourceModel;
 import motorcli.example.entity.sys.ACL;
 import motorcli.example.entity.sys.Resource;

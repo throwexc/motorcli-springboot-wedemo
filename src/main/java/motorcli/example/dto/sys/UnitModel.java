@@ -1,6 +1,6 @@
 package motorcli.example.dto.sys;
 
-import com.motorcli.springboot.restfull.dto.TreeEntityDataModel;
+import com.motorcli.springboot.restful.dto.TreeEntityDataModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;

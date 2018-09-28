@@ -1,7 +1,7 @@
 package motorcli.example.dto.sys;
 
 import motorcli.example.entity.sys.Role;
-import com.motorcli.springboot.restfull.dto.EntityDataModel;
+import com.motorcli.springboot.restful.dto.EntityDataModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;

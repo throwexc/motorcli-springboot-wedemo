@@ -984,3 +984,5 @@ target/classes/templates/main/easyui/easyui-main-left.ftl
 target/classes/templates/main/easyui/easyui-main-top.ftl
 target/classes/templates/main/easyui/easyui-main.ftl
 target/classes/templates/main/main.ftl
+.idea/dictionaries/Li.xml
+.idea/libraries/Maven__motorcli_springboot_motorcli_springboot_restful_0_1.xml

@@ -1,9 +1,9 @@
 package motorcli.example.controller.api.sys;
 
 import motorcli.example.entity.sys.Module;
-import com.motorcli.springboot.restfull.result.Result;
-import com.motorcli.springboot.restfull.result.ResultItems;
-import com.motorcli.springboot.restfull.result.ResultRecord;
+import com.motorcli.springboot.restful.result.Result;
+import com.motorcli.springboot.restful.result.ResultItems;
+import com.motorcli.springboot.restful.result.ResultRecord;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import motorcli.example.common.base.BaseApi;

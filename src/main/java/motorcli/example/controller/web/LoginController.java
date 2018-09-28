@@ -9,7 +9,7 @@ import motorcli.example.entity.sys.Module;
 import motorcli.example.service.sys.LoginLogService;
 import motorcli.example.service.sys.ModuleService;
 import motorcli.example.service.sys.UserService;
-import com.motorcli.springboot.restfull.dto.converter.TreeConverter;
+import com.motorcli.springboot.restful.dto.converter.TreeConverter;
 import motorcli.example.common.annotation.NoCheckSession;
 import motorcli.example.common.base.BaseController;
 import motorcli.example.dto.sys.CheckUserInfo;

@@ -60,7 +60,7 @@
 
 		<dependency>
 			<groupId>motorcli-springboot</groupId>
-			<artifactId>motorcli-springboot-restfull</artifactId>
+			<artifactId>motorcli-springboot-restful</artifactId>
 			<version>${motorcli.version}</version>
 		</dependency>
 

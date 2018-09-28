@@ -1,12 +1,12 @@
 package motorcli.example.common.base;
 
 import com.github.pagehelper.Page;
-import com.motorcli.springboot.restfull.MotorApiBase;
-import com.motorcli.springboot.restfull.dto.EntityDataModel;
-import com.motorcli.springboot.restfull.dto.TreeEntityDataModel;
-import com.motorcli.springboot.restfull.dto.converter.ListConverter;
-import com.motorcli.springboot.restfull.dto.converter.TreeConverter;
-import com.motorcli.springboot.restfull.result.ResultItems;
+import com.motorcli.springboot.restful.MotorApiBase;
+import com.motorcli.springboot.restful.dto.EntityDataModel;
+import com.motorcli.springboot.restful.dto.TreeEntityDataModel;
+import com.motorcli.springboot.restful.dto.converter.ListConverter;
+import com.motorcli.springboot.restful.dto.converter.TreeConverter;
+import com.motorcli.springboot.restful.result.ResultItems;
 
 import java.util.List;
 

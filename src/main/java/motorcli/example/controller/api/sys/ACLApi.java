@@ -3,7 +3,7 @@ package motorcli.example.controller.api.sys;
 import motorcli.example.dto.sys.params.ACLSaveParams;
 import motorcli.example.entity.sys.ACL;
 import motorcli.example.service.sys.ACLService;
-import com.motorcli.springboot.restfull.result.Result;
+import com.motorcli.springboot.restful.result.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

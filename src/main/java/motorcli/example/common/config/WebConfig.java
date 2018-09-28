@@ -37,7 +37,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new CommonAttrInterceptor());
-        registry.addInterceptor(new CheckSessionInterceptor()).excludePathPatterns("/api**", "/wx/**", "/swagger**", "/v2/**", "/configuration/**", "/error**");
+        registry.addInterceptor(new CheckSessionInterceptor()).excludePathPatterns("/api**", "/wx/**", "/swagger-resources/**", "/v2/**", "/configuration/**", "/error**");
         //registry.addInterceptor(new WebDebugInterceptor());
     }
 
