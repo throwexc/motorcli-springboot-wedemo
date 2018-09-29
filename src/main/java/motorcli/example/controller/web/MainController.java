@@ -1,12 +1,7 @@
 package motorcli.example.controller.web;
 
 import motorcli.example.common.base.BaseController;
-import motorcli.example.dto.sys.ModuleModel;
-import motorcli.example.dto.sys.UserModel;
-import motorcli.example.common.base.BaseController;
-import motorcli.example.dto.sys.ModuleModel;
-import motorcli.example.dto.sys.UserModel;
-import motorcli.example.common.base.BaseController;
+import motorcli.example.common.config.ConfigReader;
 import motorcli.example.dto.sys.ModuleModel;
 import motorcli.example.dto.sys.UserModel;
 import org.springframework.context.annotation.Scope;
@@ -52,6 +47,7 @@ public class MainController extends BaseController {
         modelMap.put("msgCount", 0);
         modelMap.put("userInfo", userInfo);
         modelMap.put("userModules", userModules);
+        modelMap.put("accessToken", ConfigReader.getInstance().get("accessToken"));
 
 //        modelMap.put("msgCount", this.messageService.countNewMessageByUserId(userInfo.getId()));
         return modelMap;

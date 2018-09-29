@@ -986,3 +986,9 @@ target/classes/templates/main/easyui/easyui-main.ftl
 target/classes/templates/main/main.ftl
 .idea/dictionaries/Li.xml
 .idea/libraries/Maven__motorcli_springboot_motorcli_springboot_restful_0_1.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_1.xml
+.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_0_3_RELEASE.xml
+.idea/libraries/Maven__org_springframework_security_spring_security_config_5_0_6_RELEASE.xml
+.idea/libraries/Maven__org_springframework_security_spring_security_core_5_0_6_RELEASE.xml
+.idea/libraries/Maven__org_springframework_security_spring_security_web_5_0_6_RELEASE.xml

@@ -35,6 +35,14 @@ define("main/MainIndex", [
 
             $.motor.wait("正在初始化数据, 请稍候...");
             $.motor.Request.get("main/init/info", {}, function (res) {
+                if(res.accessToken) {
+                    $.ajaxSetup({
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader('X-Authorization', "Bearer " + res.accessToken);
+                        }
+                    });
+                }
+
                 this.userInfo = res.userInfo;
                 this.getModuleMap(res.userModules);
                 this.$userMsgCount.html(res.msgCount);
