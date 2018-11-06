@@ -38,7 +38,7 @@ define("main/MainIndex", [
                 if(res.accessToken) {
                     $.ajaxSetup({
                         beforeSend: function (xhr) {
-                            xhr.setRequestHeader('X-Authorization', "Bearer " + res.accessToken);
+                            xhr.setRequestHeader('Authorization', "Bearer " + res.accessToken);
                         }
                     });
                 }

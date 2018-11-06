@@ -48,6 +48,7 @@ public class MainController extends BaseController {
         modelMap.put("userInfo", userInfo);
         modelMap.put("userModules", userModules);
         modelMap.put("accessToken", ConfigReader.getInstance().get("accessToken"));
+        modelMap.put("refreshToken", ConfigReader.getInstance().get("refreshToken"));
 
 //        modelMap.put("msgCount", this.messageService.countNewMessageByUserId(userInfo.getId()));
         return modelMap;

@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 @ApiModel("分页查询参数")
 public class PageSearchParams extends RequestSearchParams {
 
-    @ApiModelProperty("页码")
+    @ApiModelProperty(value = "页码", example = "1")
     protected Integer pageNum;
 
-    @ApiModelProperty("页长")
+    @ApiModelProperty(value = "页长", example = "10")
     protected Integer pageSize;
 
     public PageSearchParams(HttpServletRequest request) {

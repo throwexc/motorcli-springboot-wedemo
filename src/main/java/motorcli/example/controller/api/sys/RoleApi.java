@@ -1,23 +1,13 @@
 package motorcli.example.controller.api.sys;
 
 import com.github.pagehelper.Page;
-import motorcli.example.dto.sys.RoleModel;
-import motorcli.example.dto.sys.params.RoleSearchParams;
-import motorcli.example.entity.sys.Role;
-import motorcli.example.service.sys.RoleService;
 import com.motorcli.springboot.common.utils.CollectionUtils;
 import com.motorcli.springboot.restful.result.Result;
 import com.motorcli.springboot.restful.result.ResultItems;
 import com.motorcli.springboot.restful.result.ResultRecord;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import motorcli.example.common.base.BaseApi;
-import motorcli.example.dto.sys.RoleModel;
-import motorcli.example.dto.sys.params.RoleSearchParams;
-import motorcli.example.entity.sys.Role;
-import motorcli.example.service.sys.RoleService;
 import motorcli.example.dto.sys.RoleModel;
 import motorcli.example.dto.sys.params.RoleSearchParams;
 import motorcli.example.entity.sys.Role;
@@ -25,7 +15,6 @@ import motorcli.example.service.sys.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -40,14 +29,14 @@ public class RoleApi extends BaseApi {
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     @ApiOperation(value="查询角色")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "name", value = "角色名称", paramType = "query", dataType = "string"),
-            @ApiImplicitParam(name = "keywords", value = "关键字", paramType = "query", dataType = "string"),
-            @ApiImplicitParam(name = "pageNum", value = "页码", paramType = "query", dataType = "int"),
-            @ApiImplicitParam(name = "pageSize", value = "页长", paramType = "query", dataType = "int")
-    })
-    public ResultItems<RoleModel> search(HttpServletRequest request) {
-        RoleSearchParams searchParams = new RoleSearchParams(request);
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(name = "name", value = "角色名称", paramType = "query", dataType = "string"),
+//            @ApiImplicitParam(name = "keywords", value = "关键字", paramType = "query", dataType = "string"),
+//            @ApiImplicitParam(name = "pageNum", value = "页码", example = "1", paramType = "query", dataType = "int"),
+//            @ApiImplicitParam(name = "pageSize", value = "页长", example = "10", paramType = "query", dataType = "int")
+//    })
+    public ResultItems<RoleModel> search(@ModelAttribute RoleSearchParams searchParams) {
+        //RoleSearchParams searchParams = new RoleSearchParams(request);
 
         if(searchParams.getPageNum() != null && searchParams.getPageSize() != null) {
             Page<Role> pageInfo = this.roleService.searchPage(searchParams);

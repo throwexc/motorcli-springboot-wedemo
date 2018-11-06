@@ -79,6 +79,7 @@ define("sys/setting/Role", [
         searchRole : function (search, searchName) {
             var params = {};
             params["name"] = search;
+            params["startTime"] = "2018-10-14 23:59:59";
             this.dataGrid.reload(params);
         },
 
