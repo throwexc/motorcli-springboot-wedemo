@@ -1,18 +1,16 @@
 package motorcli.example.common.config;
 
+import com.motorcli.springboot.restful.utils.DocketInfo;
+import com.motorcli.springboot.restful.utils.DocketUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
-import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
 import java.util.ArrayList;
-
-import static springfox.documentation.builders.PathSelectors.regex;
 
 @Configuration
 public class APIConfig implements WebMvcConfigurer {
@@ -24,16 +22,13 @@ public class APIConfig implements WebMvcConfigurer {
 
     @Bean
     public Docket sysApiDoc() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("API 接口")
-                .genericModelSubstitutes(DeferredResult.class)
-                .useDefaultResponseMessages(false)
-                .forCodeGeneration(true)
-                .pathMapping("/")
-                .select()
-                .paths(regex("/api/sys/.*"))//过滤的接口
-                .build()
-                .apiInfo(apiInfo());
+        DocketInfo docketInfo = DocketInfo
+                .builder()
+                .groupName("系统管理接口")
+                .basePackage("motorcli.example.controller.api.sys")
+                .apiInfo(apiInfo())
+                .build();
+        return DocketUtils.JWTBuilder(docketInfo);
     }
 
     private ApiInfo apiInfo() {
