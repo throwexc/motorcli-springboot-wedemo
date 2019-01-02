@@ -992,3 +992,4 @@ target/classes/templates/main/main.ftl
 .idea/libraries/Maven__org_springframework_security_spring_security_config_5_0_6_RELEASE.xml
 .idea/libraries/Maven__org_springframework_security_spring_security_core_5_0_6_RELEASE.xml
 .idea/libraries/Maven__org_springframework_security_spring_security_web_5_0_6_RELEASE.xml
+.idea/vcs.xml
