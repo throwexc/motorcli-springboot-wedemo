@@ -98,7 +98,7 @@ CREATE TABLE `t_sys_user` (
   `head_img_url` varchar(200) DEFAULT NULL COMMENT '头像图片地址',
   `active_time` datetime DEFAULT NULL COMMENT '有效时间',
   `create_time` datetime NOT NULL COMMENT '创建时间',
-  `updateTime` datetime NOT NULL COMMENT '更新时间',
+  `update_time` datetime NOT NULL COMMENT '更新时间',
   `unit_id` varchar(36) DEFAULT NULL COMMENT '部门ID',
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_USER_USERNAME` (`username`),

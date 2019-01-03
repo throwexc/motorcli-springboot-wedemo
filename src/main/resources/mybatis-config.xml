@@ -5,6 +5,7 @@
 <configuration>
     
     <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING" />
         <!-- 使用JDBC的getGeneratedKeys获取自增主键 -->
         <setting name="useGeneratedKeys" value="true"/>
         <!-- 使用别名替换列名 -->

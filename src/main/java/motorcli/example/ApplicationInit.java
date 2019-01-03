@@ -3,6 +3,7 @@ package motorcli.example;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.motorcli.springboot.common.utils.HttpUtils;
 import com.motorcli.springboot.common.utils.JsonUtils;
+import com.motorcli.springboot.mybatis.config.MotorCLIMybatisAutoConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import motorcli.example.common.config.ConfigReader;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class ApplicationInit implements ApplicationRunner {
         log.info("Application Init Start");
 
         String username = "admin";
-        String password = "123";
+        String password = "admin";
 
         String serverUrl = "http://127.0.0.1:8088/";
 
