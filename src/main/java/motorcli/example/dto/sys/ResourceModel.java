@@ -1,18 +1,16 @@
 package motorcli.example.dto.sys;
 
+import com.motorcli.springboot.restful.dto.TreeModel;
 import motorcli.example.entity.sys.Resource;
-import com.motorcli.springboot.restful.dto.TreeEntityDataModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-import motorcli.example.entity.sys.Resource;
-import motorcli.example.entity.sys.Resource;
 
 @Getter
 @Setter
 @ApiModel("系统资源信息")
-public class ResourceModel extends TreeEntityDataModel<Resource> {
+public class ResourceModel extends TreeModel<Resource> {
 
     @ApiModelProperty("资源名称")
     protected String name;

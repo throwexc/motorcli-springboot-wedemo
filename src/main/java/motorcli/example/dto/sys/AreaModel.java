@@ -1,6 +1,6 @@
 package motorcli.example.dto.sys;
 
-import com.motorcli.springboot.restful.dto.TreeEntityDataModel;
+import com.motorcli.springboot.restful.dto.TreeModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @ApiModel("区域信息")
-public class AreaModel extends TreeEntityDataModel<Area> {
+public class AreaModel extends TreeModel<Area> {
 
     @ApiModelProperty("id")
     private String id;

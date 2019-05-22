@@ -1,18 +1,16 @@
 package motorcli.example.dto.sys;
 
+import com.motorcli.springboot.restful.dto.TreeModel;
 import motorcli.example.entity.sys.Dictionary;
-import com.motorcli.springboot.restful.dto.TreeEntityDataModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-import motorcli.example.entity.sys.Dictionary;
-import motorcli.example.entity.sys.Dictionary;
 
 @Getter
 @Setter
 @ApiModel("数据字典信息")
-public class DictionaryModel extends TreeEntityDataModel<Dictionary> {
+public class DictionaryModel extends TreeModel<Dictionary> {
 
     @ApiModelProperty("key")
     private String key;
