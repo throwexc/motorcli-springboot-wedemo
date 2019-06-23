@@ -3,9 +3,10 @@ package motorcli.example;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.motorcli.springboot.common.utils.HttpUtils;
 import com.motorcli.springboot.common.utils.JsonUtils;
-import com.motorcli.springboot.mybatis.config.MotorCLIMybatisAutoConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import motorcli.example.common.config.ConfigReader;
+import motorcli.example.job.TestJob2;
+import org.quartz.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -24,6 +25,9 @@ public class ApplicationInit implements ApplicationRunner {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @Autowired
+    private Scheduler scheduler;
 
     @Override
     public void run(ApplicationArguments applicationArguments) throws Exception {
@@ -58,5 +62,32 @@ public class ApplicationInit implements ApplicationRunner {
         ConfigReader.getInstance().add("tokenTime", new Date().getTime());
 
         log.info("Application Init End");
+
+        //this.createJobs();
+    }
+
+    private void createJobs() {
+
+        log.info("Create Job Test 2 Begin");
+
+        JobDetail jobDetail = JobBuilder.newJob(TestJob2.class).withIdentity("testJob2").storeDurably().build();
+
+        SimpleScheduleBuilder simpleScheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
+                .withIntervalInSeconds(5)
+                .repeatForever();
+
+        Trigger trigger =  TriggerBuilder.newTrigger().forJob(jobDetail)
+                .withIdentity("testJob2")
+                .withSchedule(simpleScheduleBuilder)
+                .build();
+
+        try {
+            this.scheduler.scheduleJob(jobDetail, trigger);
+        } catch (SchedulerException e) {
+            e.printStackTrace();
+        }
+
+
+        log.info("Create Job Test 2 End");
     }
 }
