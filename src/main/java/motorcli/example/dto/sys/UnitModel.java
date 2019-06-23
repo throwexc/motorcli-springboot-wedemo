@@ -1,6 +1,6 @@
 package motorcli.example.dto.sys;
 
-import com.motorcli.springboot.restful.dto.TreeEntityDataModel;
+import com.motorcli.springboot.restful.dto.TreeModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import motorcli.example.entity.sys.Unit;
 @Getter
 @Setter
 @ApiModel("部门信息")
-public class UnitModel extends TreeEntityDataModel<Unit> {
+public class UnitModel extends TreeModel<Unit> {
 
     @ApiModelProperty("部门名称")
     private String name;

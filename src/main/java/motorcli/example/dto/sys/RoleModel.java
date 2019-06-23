@@ -1,18 +1,16 @@
 package motorcli.example.dto.sys;
 
+import com.motorcli.springboot.common.dto.DataModel;
 import motorcli.example.entity.sys.Role;
-import com.motorcli.springboot.restful.dto.EntityDataModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-import motorcli.example.entity.sys.Role;
-import motorcli.example.entity.sys.Role;
 
 @Getter
 @Setter
 @ApiModel("角色信息")
-public class RoleModel extends EntityDataModel<Role> {
+public class RoleModel extends DataModel<Role> {
 
     @ApiModelProperty("id")
     private String id;

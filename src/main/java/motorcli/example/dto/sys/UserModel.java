@@ -1,7 +1,7 @@
 package motorcli.example.dto.sys;
 
+import com.motorcli.springboot.common.dto.DataModel;
 import com.motorcli.springboot.common.utils.CollectionUtils;
-import com.motorcli.springboot.restful.dto.EntityDataModel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -13,7 +13,7 @@ import motorcli.example.entity.sys.User;
 @Getter
 @Setter
 @ApiModel("用户信息")
-public class UserModel extends EntityDataModel<User> {
+public class UserModel extends DataModel<User> {
 
     @ApiModelProperty("id")
     protected String id;
